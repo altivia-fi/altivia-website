@@ -1,0 +1,280 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f7f4f1;
+  --surface: #ffffff;
+  --border: #e6e1dc;
+  --text: #17141a;
+  --muted: #6e6a72;
+  --accent: #c2410c;
+  --ember: #ff6a3d;
+  --teal: #0b7a6b;
+  --glow: rgba(255, 106, 61, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e0e11;
+    --surface: #1a1a20;
+    --border: #2a2a33;
+    --text: #f5f5f7;
+    --muted: #9a9aa5;
+    --accent: #ff9b78;
+    --teal: #3dd9c1;
+    --glow: rgba(255, 106, 61, 0.22);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg) radial-gradient(ellipse 80% 520px at 80% -80px, var(--glow), transparent 70%)
+    no-repeat;
+  color: var(--text);
+  font:
+    17px/1.6 -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    sans-serif;
+}
+
+a {
+  color: var(--accent);
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header.site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand span {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+nav.site a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav.site a:hover,
+nav.site a[aria-current='page'] {
+  color: var(--text);
+}
+
+h1 {
+  font-size: clamp(40px, 8vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  margin: 48px 0 16px;
+}
+
+h1 .accent {
+  color: var(--ember);
+}
+
+h2 {
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 56px 0 12px;
+}
+
+.lead {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 34em;
+  margin: 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.app-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 40px;
+}
+
+.app-card:hover {
+  border-color: var(--ember);
+}
+
+.app-card img {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  flex: none;
+}
+
+.app-card strong {
+  font-size: 22px;
+  display: block;
+}
+
+.app-card span {
+  color: var(--muted);
+}
+
+.hero {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.hero img {
+  width: 104px;
+  height: 104px;
+  border-radius: 24px;
+  flex: none;
+}
+
+.hero h1 {
+  margin: 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.badge {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.shots img {
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px 20px;
+}
+
+.features strong {
+  display: block;
+}
+
+.features span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.legal {
+  max-width: 44rem;
+}
+
+.legal h1 {
+  font-size: clamp(34px, 6vw, 48px);
+}
+
+.legal h2 {
+  font-size: 20px;
+  margin: 32px 0 8px;
+}
+
+.legal ul {
+  padding-left: 1.2rem;
+}
+
+footer.site {
+  border-top: 1px solid var(--border);
+  margin-top: 80px;
+  padding: 28px 0 48px;
+  color: var(--muted);
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+footer.site a {
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .shots {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .shots img {
+    border-radius: 14px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav.site a {
+    margin-left: 14px;
+  }
+}
