@@ -187,6 +187,16 @@ h2 {
   color: var(--muted);
 }
 
+.badge-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.badge-link:hover,
+.badge-link:focus-visible {
+  border-color: currentColor;
+}
+
 .shots {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
